@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
  mongoose
- .connect("mongodb://localhost:27017/task")
+ .connect("mongodb+srv://ochhaneCKN:ckNashedi2023@ckncluster.f9aqza7.mongodb.net/test")
  .then(() => console.log("DB connection successful!"))
  .catch((error) => console.log(error));
 
