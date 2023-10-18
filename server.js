@@ -16,16 +16,21 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
  mongoose
- .connect("mongodb+srv://ochhaneCKN:ckNashedi2023@ckncluster.f9aqza7.mongodb.net/test")
-//  .connect("mongodb://localhost:27017/task")
+//  .connect("mongodb+srv://ochhaneCKN:ckNashedi2023@ckncluster.f9aqza7.mongodb.net/test")
+ .connect("mongodb://localhost:27017/task")
  .then(() => console.log("DB connection successful!"))
  .catch((error) => console.log(error));
 
 
 Router.use(express.json())
 
-const PORT =process.env.PORT || 8000;
+// const PORT =process.env.PORT || 8000;
+const PORT = 5050;
 app.use(Router)
+app.get('/data', (req, res) => {
+    res.send("http://localhost")
+}
+)
 
 
 app.listen(PORT,()=>{
